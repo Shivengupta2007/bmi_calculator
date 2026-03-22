@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: 0.5s;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+}
+
+.theme-btn {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  padding: 8px 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 18px;
+  backdrop-filter: blur(15px);
+  color: white;
+  animation: float 6s infinite;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,200,0.2), transparent);
+  pointer-events: none;
+}
+
+.card * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes float {
+  50% { transform: translateY(-10px); }
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#reset {
+  background: red;
+  color: white;
+}
+
+#results {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 22px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 0.4s;
+}
+
+#results.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.bmi-bar {
+  height: 10px;
+  background: rgba(255,255,255,0.2);
+  margin-top: 10px;
+}
+
+.bmi-fill {
+  height: 100%;
+  width: 0%;
+  transition: 0.5s;
+}
+
+/* Light mode */
+body.light {
+  background: #f5f5f5;
+}
+
+body.light .card {
+  background: white;
+  color: black;
+}

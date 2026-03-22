@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Theme Toggle -->
+    <button id="toggleTheme" class="theme-btn">🌙</button>
+
+    <div class="card">
+      <h1>BMI Calculator</h1>
+
+      <form>
+        <div class="input-group">
+          <label>Height (cm)</label>
+          <input type="number" id="height" placeholder="Enter height">
+        </div>
+
+        <div class="input-group">
+          <label>Weight (kg)</label>
+          <input type="number" id="weight" placeholder="Enter weight">
+        </div>
+
+        <button type="submit">Calculate BMI</button>
+        <button type="button" id="reset">Reset</button>
+
+        <div id="results"></div>
+
+        <div class="bmi-bar">
+          <div class="bmi-fill"></div>
+        </div>
+      </form>
+
+      <div id="weight-guide">
+        <h3>BMI Guide</h3>
+        <p>Underweight: less than 18.6</p>
+        <p>Normal: 18.6 – 24.9</p>
+        <p>Overweight: greater than 24.9</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
